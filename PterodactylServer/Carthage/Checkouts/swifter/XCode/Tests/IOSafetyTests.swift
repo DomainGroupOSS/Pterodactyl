@@ -7,6 +7,9 @@
 //
 
 import XCTest
+#if os(Linux)
+import FoundationNetworking
+#endif
 @testable import Swifter
 
 class IOSafetyTests: XCTestCase {
@@ -18,15 +21,15 @@ class IOSafetyTests: XCTestCase {
         server = HttpServer.pingServer()
         urlSession = URLSession(configuration: .default)
     }
-    
+
     override func tearDown() {
         if server.operating {
             server.stop()
         }
-        
+
         urlSession = nil
         server = nil
-        
+
         super.tearDown()
     }
 
