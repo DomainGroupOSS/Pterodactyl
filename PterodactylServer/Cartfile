@@ -1,1 +1,2 @@
-github "httpswift/swifter"
+github "httpswift/swifter" ~> 1.5.0
+ 
